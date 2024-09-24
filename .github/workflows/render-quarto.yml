@@ -22,10 +22,11 @@ jobs:
           sudo dpkg -i quarto-1.3.340-linux-amd64.deb
 
       - name: Render Quarto Markdown to HTML
-        run: quarto render check.qmd --to html
+        run: |
+          quarto render check.qmd --to html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}    
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs
