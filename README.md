@@ -2,8 +2,8 @@
 quarto-markdown-demo
 
 # Conversion
-quarto render *.qmd --to html 
-OR
+quarto render *.qmd --to html <br>
+OR <br>
 quarto render *.ipynb --to html
 
 # Moving html to docs folder
