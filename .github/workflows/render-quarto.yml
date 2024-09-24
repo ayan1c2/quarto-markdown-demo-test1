@@ -23,18 +23,21 @@ jobs:
           wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.3.340/quarto-1.3.340-linux-amd64.deb
           sudo dpkg -i quarto-1.3.340-linux-amd64.deb
 
-      # 3. Render all Quarto .qmd files to HTML and move to docs folder
-      - name: Render Quarto Markdown to HTML and move to docs folder
+      # 3. Render the Quarto Markdown file(s) to HTML
+      - name: Render Quarto Markdown to HTML
         run: |
-          # Create the docs folder if it doesn't exist
-          # mkdir -p docs
-          # Render all .qmd files in the repository and place the HTML in docs
-          quarto render *.qmd --to html --output-dir docs
+          # Render the .qmd file to HTML in the current directory
+          quarto render *.qmd --to html
 
-      # 4. Generate a Sitemap file in the docs folder
+      # 4. Move the generated HTML file to the docs folder
+      - name: Move rendered HTML to docs
+        run: |
+          mkdir -p docs
+          mv *.html docs/  # Move the HTML file(s) into the docs folder
+
+      # 5. Generate Sitemap
       - name: Generate Sitemap
         run: |
-          # Create a basic sitemap for the HTML files in the docs folder
           echo '<?xml version="1.0" encoding="UTF-8"?>' > docs/sitemap.xml
           echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> docs/sitemap.xml
           for f in docs/*.html; do
@@ -43,7 +46,7 @@ jobs:
           done
           echo '</urlset>' >> docs/sitemap.xml
 
-      # 5. Deploy the docs folder to GitHub Pages
+      # 6. Deploy the docs folder to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
