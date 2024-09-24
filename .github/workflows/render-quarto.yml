@@ -33,7 +33,8 @@ jobs:
       - name: Move rendered HTML to docs
         run: |
           mkdir -p docs
-          mv *.html docs/  # Move the HTML file(s) into the docs folder
+          #mv *.html docs/  # Move the HTML file(s) into the docs folder
+          find . -name '*.html' -exec mv {} docs/ \;
 
       # 5. Generate Sitemap
       - name: Generate Sitemap
