@@ -1,6 +1,10 @@
 # quarto-markdown-demo-test1
 quarto-markdown-demo
 
+# Conversion
+quarto render *.qmd --to html 
+OR
+quarto render *.ipynb --to html
 
-# quarto render index.qmd --to html
-# move *.html docs
+# Moving html to docs folder
+move *.html docs
