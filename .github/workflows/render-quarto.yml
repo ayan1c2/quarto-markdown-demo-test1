@@ -1,4 +1,5 @@
 name: Quarto Markdown Render, Generate Sitemap, and Deploy
+#navigate to gh-pages branch where all will be populated. Moreover, use the same branch with /root combination for deployment.
 
 on:
   push:
