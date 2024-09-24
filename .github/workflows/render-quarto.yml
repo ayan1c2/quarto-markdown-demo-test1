@@ -29,7 +29,7 @@ jobs:
           # Create the docs folder if it doesn't exist
           mkdir -p docs
           # Render all .qmd files in the repository and place the HTML in docs
-          quarto render --to html --output-dir docs
+          quarto render *.qmd --to html --output-dir docs
 
       # 4. Generate a Sitemap file in the docs folder
       - name: Generate Sitemap
