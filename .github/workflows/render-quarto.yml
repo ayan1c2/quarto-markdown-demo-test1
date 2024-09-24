@@ -27,7 +27,7 @@ jobs:
       - name: Render Quarto Markdown to HTML and move to docs folder
         run: |
           # Create the docs folder if it doesn't exist
-          mkdir -p docs
+          # mkdir -p docs
           # Render all .qmd files in the repository and place the HTML in docs
           quarto render *.qmd --to html --output-dir docs
 
