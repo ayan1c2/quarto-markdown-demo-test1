@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://<your-username>.github.io/<your-repo-name>/README.html</loc></url>
+  <url><loc>https://<your-username>.github.io/<your-repo-name>/SECURITY.html</loc></url>
   <url><loc>https://<your-username>.github.io/<your-repo-name>/check.html</loc></url>
   <url><loc>https://<your-username>.github.io/<your-repo-name>/index.html</loc></url>
   <url><loc>https://<your-username>.github.io/<your-repo-name>/index2.html</loc></url>
   <url><loc>https://<your-username>.github.io/<your-repo-name>/index3.html</loc></url>
   <url><loc>https://<your-username>.github.io/<your-repo-name>/sales_report.html</loc></url>
+  <url><loc>https://<your-username>.github.io/<your-repo-name>/sales_report2.html</loc></url>
 </urlset>
