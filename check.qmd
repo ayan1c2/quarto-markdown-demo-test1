@@ -14,6 +14,6 @@ This is a demo of how to store and use Quarto Markdown files in a GitHub reposit
 
 ## Features
 
-- Store Quarto Markdown in GitHub
-- Render HTML files using Quarto CLI
-- Share and version control Quarto files
+-   Store Quarto Markdown in GitHub
+-   Render HTML files using Quarto CLI
+-   Share and version control Quarto files
