@@ -2,7 +2,7 @@
 title: "A Cheatsheet for Developing Standards for Generative AI Training and Web Crawlers"
 subtitle: "Information Provisioning for Generative Chatbots"
 author: "Ayan Chatterjee, Department of DIGITAL, NILU"
-date: "2024-09-30"
+date: "2024-10-29"
 sitemap: true
 toc: true
 toc-title: "Contents"
@@ -10,8 +10,8 @@ toc-depth: 3
 keywords: ["AI standards", "web crawlers", "AI training", "content formatting"]
 format: 
   html: default
-  pdf: default
-  docx: default
+  #pdf: default
+  #docx: default
 ---
 
 This document serve as a quick reference guide to ensure content follows structured formats essential for web crawlers and AI systems. Utilizing Quarto Markdown in HTMLs and generating sitemaps are critical for efficient crawling, helping search engines and AI models quickly index and retrieve well-structured content.
@@ -143,7 +143,7 @@ To optimize content for AI integration, HTML documents should include semantic e
 
 ------------------------------------------------------------------------
 
-# 3. Importance of Sitemap Indexing in HTML Documents for Easy Web Crawling and Generative AI Training
+# 3. Importance of Sitemap Indexing in HTML Documents
 
 Sitemaps are essential for enhancing the discoverability and accessibility of web content for both web crawlers and AI systems. As an XML file, a sitemap provides a structured roadmap of a website, listing URLs, metadata, and details like last modified dates and update frequency. This helps crawlers efficiently index content and enables generative AI models to train on well-structured data, improving processing and retrieval accuracy. Key Benefits of Sitemap Indexing for Web Crawling and AI Training are:
 
@@ -158,11 +158,12 @@ Sitemaps are essential for enhancing the discoverability and accessibility of we
 ``` yaml
 ---
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-   <url>
-      <loc>http://example.com/ai-training</loc>
-      <lastmod>2024-09-30</lastmod>
-      <changefreq>monthly</changefreq>
-   </url>
+<url>
+    <loc>https://<your-username>.github.io/<your-repo-name>/index.html</loc>
+    <lastmod>2024-10-08T12:24:05Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
 </urlset>
 ---
 ```
@@ -183,12 +184,38 @@ Submit your sitemap to search engines via tools like Google Search Console to en
 
 ------------------------------------------------------------------------
 
-# 5. Automation with GitHub Deployment
+# 5. Quarto Markdown Editors
+
+To work with Quarto Markdown (.qmd) files and have them generated automatically, we can use several editors that integrate well with Quarto. VS Code (Visual Studio Code), RStudio, JupyterLab with Quarto Integration, and Atom with Quarto Plugin  are some popular editors that support Quarto and can automatically generate .qmd files. 
+
+R-Studio is lightweight, easy-to-use and integrates with Quarto and provides tools for rendering, previewing, and managing .qmd documents in an effective way.
+
+## Steps to Set It Up
+
+1. **Install RStudio**: Download from [RStudio](https://posit.co/download/rstudio-desktop/).
+2. **Install Quarto**: Follow [Quarto installation](https://quarto.org/docs/get-started/) instructions to install Quarto.
+3. **Create a New Quarto Document**:
+    - In RStudio, go to **File > New File > Quarto Document**.
+    - Choose the type of document you want (e.g., HTML, PDF, Word).
+    - A `.qmd` file will be created automatically.
+4. **Automatically Render `.qmd`**:
+    - After editing your document, you can preview it using **Render** or export it to various formats.
+
+## Benefits
+
+- Full support for Quarto with an integrated environment.
+- Provides tools for live preview and exporting.
+- Ideal for users familiar with R or data science workflows.
+
+
+------------------------------------------------------------------------
+
+# 6. Automation with GitHub Deployment
 
 Automation is crucial for ensuring efficiency and consistency in the deployment of content structured for AI integration and web crawlers. By automating the rendering of Quarto Markdown, Markdown, and Jupyter Notebook files into HTML, generating a sitemap, and deploying the output to GitHub Pages, the process becomes seamless and repeatable with minimal human intervention. This ensures that any changes to content are instantly reflected on the website, keeping the content discoverable and up-to-date for web crawlers and AI systems. Steps in the Automation Pipeline are:
 
 a.  **Trigger on Push or Pull Requests**:
-    -   The workflow is triggered whenever `.qmd`, `.md`, or `.ipynb` files are modified or included in a pull request, ensuring content is updated automatically.
+    -   The workflow is triggered whenever `.qmd` files are modified or included in a pull request, ensuring content is updated automatically. 
 b.  **Checkout Repository**:
     -   Retrieves the latest version of the repository where content resides.
 c.  **Install Quarto**:
@@ -198,7 +225,7 @@ d.  **Render Content**:
 e.  **Move Generated HTML to Deployment Folder**:
     -   Organizes all generated HTML files into the designated folder (`docs`) for web deployment.
 f.  **Generate Sitemap**:
-    -   Automatically creates a `sitemap.xml` that helps search engines and web crawlers discover all available content on the website.
+    -   Automatically creates a `sitemap.xml` following the google structure and it helps search engines and web crawlers discover all available content on the website.
 g.  **Deploy to GitHub Pages**:
     -   Deploys the `docs` folder, which contains the HTML and `sitemap.xml`, to GitHub Pages for public access.
 

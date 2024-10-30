@@ -1,26 +1,51 @@
 ---
-title: "Untitled"
+title: "Guidelines for Using Quarto Markdown in HTML for Web Crawling"
+author: "Ayan Chatterjee, NILU DIGITAL"
+date: "2024-10-30"
 format: html
-editor: visual
+sitemap: true       # Enable sitemap generation for web crawlers
+toc: true           # Include a Table of Contents for better navigation
+toc-title: "Contents"
+toc-depth: 3        # Set TOC depth to include up to h3 headings
+keywords: ["SEO", "web crawling", "Quarto Markdown", "HTML"]
+description: "This document provides guidelines for using Quarto Markdown in HTML for web crawling."
 ---
 
-## Quarto
+# Guidelines for Using Quarto Markdown in HTML for Web Crawling
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+**Purpose**: This document provides guidelines on using Quarto Markdown to create HTML files optimized for web crawling. These steps and syntaxes will help you structure content, enhance SEO, and improve discoverability of your pages.
 
-## Running Code
+## Prerequisites
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+1. **Install RStudio**: Download and install RStudio from [RStudio Download](https://posit.co/download/rstudio-desktop/).
+2. **Install Quarto**: Follow [Quarto installation](https://quarto.org/docs/get-started/) to install the Quarto CLI.
 
-```{r}
-1 + 1
-```
+## Basic Setup in RStudio
 
-You can add options to executable code like this
+1. **Create a New Quarto Document**:
+   - In RStudio, go to **File > New File > Quarto Document**.
+   - Choose the type of document (e.g., HTML) and enter your title and metadata in the YAML header.
 
-```{r}
-#| echo: false
-2 * 2
-```
+2. **Save the File**:
+   - Save the file with a `.qmd` extension to ensure it is treated as a Quarto Markdown file.
 
-The `echo: false` option disables the printing of code (only output is displayed).
+3. **YAML Header Configuration**:
+   - Configure the YAML header with essential metadata to optimize the document for web crawling.
+
+## YAML Header Configuration for SEO
+
+The YAML header includes metadata that is critical for SEO and web crawling.
+
+```yaml
+---
+title: "Optimized Web Crawling Document"
+author: "Your Name"
+date: "2024-10-08"
+format: html
+sitemap: true       # Enable sitemap generation for web crawlers
+toc: true           # Include a Table of Contents for better navigation
+toc-title: "Contents"
+toc-depth: 3        # Set TOC depth to include up to h3 headings
+keywords: ["SEO", "web crawling", "Quarto Markdown", "HTML"]
+description: "This document provides guidelines for using Quarto Markdown in HTML for web crawling."
+---
